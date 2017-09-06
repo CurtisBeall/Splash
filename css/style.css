@@ -1,0 +1,10 @@
+/*Background*/
+body {
+    background-color: pink;
+};
+
+/*Navigation Bar*/
+.nav-item {
+    display:inline-block;
+    background-color: black;
+};
