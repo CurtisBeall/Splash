@@ -1,10 +1,94 @@
-/*Background*/
-body {
-    background-color: pink;
-};
+/* Everything */
+* {
+	box-sizing: border-box;
+}
 
-/*Navigation Bar*/
+/* SR-Only */
+.sr-only {
+    display: none;
+}
+
+/* Reset */
+.reset {
+    margin: 0;
+}
+
+/* Text-Shadow */
+.text-shadow {
+    text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.8);
+}
+
+/* Background */
+body {
+    background-image:url(../img/water_drop.jpg);
+    background-repeat:no-repeat;
+    background-color: #4d0d2c;
+    background-position: 50% 0, center;
+    background-size: 120rem;
+    margin: 0 auto;
+    max-width: 120rem;
+    text-align: center;
+
+}
+
+
+
+/* Header */
+header {
+    height: 7rem;
+    max-width: 120rem;
+    margin: 0.625rem 1.875rem;
+
+}
+
+/* logo */
+.logo {
+    float: left;
+
+    display: inline-block;
+    width: 12.5rem;
+
+}
+
+/* Navigation Bar */
+.navbar,
 .nav-item {
-    display:inline-block;
-    background-color: black;
-};
+    float: right;
+    display: inline-block;
+    margin-top: 1.25rem;
+}
+
+.nav-item {
+    float: left;
+
+}
+
+.nav-link {
+    font-size: 1.5625rem;
+    font-family: Oswald, fantasy;
+
+    color: white;
+    text-decoration: none;
+    margin-left: 2.5rem;
+}
+
+
+
+/* Billbaord */
+.billboard {
+    margin-top: 17rem;
+    color: white;
+}
+
+.billboard_h1 {
+    margin: 0 auto;
+    font-size: 5.375rem;
+    font-family: Oswald, sans-serif;
+
+}
+
+.billboard_h2 {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    font-family: PT Sans, sans-serif;
+}
