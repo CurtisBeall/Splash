@@ -1,6 +1,8 @@
 /* Everything */
 * {
 	box-sizing: border-box;
+    /*border: .05rem green solid;*/
+
 }
 
 /* SR-Only */
@@ -20,8 +22,8 @@
 
 /* Text Highlight */
 .text-highlight {
-    margin: 2rem 20rem;
-    color: #e0ae00;
+    color: #e00077;
+
 }
 
 .float-r {
@@ -41,6 +43,15 @@
     max-width: 120rem;
 }
 
+.what_we_do_text_scroll_in {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+
 /* Background */
 body {
     background-image:url(../img/water_drop.jpg);
@@ -51,23 +62,24 @@ body {
     background-size: 120rem;
     margin: 0 auto;
     max-width: 120rem;
+}
+
+.container {
     text-align: center;
 }
 
 h1 {
-    margin: 0 auto;
-    font-size: 5.375rem;
+    font-size: 4rem;
     font-family: Oswald, sans-serif;
-
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: PT Sans, sans-serif;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: PT Sans, sans-serif;
 }
 
@@ -84,6 +96,7 @@ header {
     width: 100%;
     max-width: 120rem;
     padding: 1rem 1.875rem;
+    z-index: 1000;
 }
 
 /* logo */
@@ -107,58 +120,141 @@ header {
     margin-left: 4rem;
 }
 
+.nav-scroll {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 
 
 /* Billbaord */
 .billboard {
     padding-top: 16rem;
     padding-bottom: 17rem;
-    margin-bottom: 20rem;
+    margin-bottom: 30rem;
     color: white;
+    position: relative;
+}
+
+.billboard_text {
+    position: absolute;
+}
+
+.billboard_h1 {
+    font-size: 3rem;
+    font-size: 5.375rem;
+    margin: 0 auto;
 }
 
 .billboard_h3 {
     padding-top: 12rem;
 }
 
-
-
 /* What We Do */
 .what_we_do {
     background-color: black;
     background-image: url("../img/meeting.jpg");
-    height: 50rem;
+    height: 44rem;
     background-repeat:no-repeat;
-    background-position: 0 -5rem, center;
+    background-position: center top -10rem;
     background-size: 120rem;
     width: 100%;
     max-width: 120rem;
-    text-align: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .what_we_do_text {
-        padding-top: 10rem;
-        color: white;
+    margin-top: 4.1rem;
+    color: white;
+    position: absolute;
+    width: 100%;
+}
+
+.what_we_do_h1 {
+    font-size: 5.375rem;
+    top: 17rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    line-height: 4.9rem;
 }
 
 .what_we_do_h2 {
+    font-size: 3rem;
+    top: 6rem;
     padding-top: 2rem;
 }
 
 .what_we_do_h3 {
-    padding: 0 15rem;
+    font-size: 1.5rem;
+    top: 31rem;
+    margin: 0 auto;
+    padding: 1rem;
     line-height: 2.1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 1rem;
+    width: 50%;
 }
 
+
+
+/* Our Work */
+.our_work_text {
+    color: white;
+    text-align: left;
+    padding: 0 2rem;
+
+}
+
+.work_example {
+    color: white;
+    display: inline-block;
+    height: 20.625rem;
+    width: 48%;
+    margin: 1rem;
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: left;
+    border-radius: 1rem;
+}
+
+.work_image {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 15rem;
+    height: 14rem;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.work_text {
+    display: inline-block;
+    width: 66%;
+    vertical-align: top;
+    margin: 1rem .5rem;
+}
+
+.company {
+    margin: auto;
+}
+
+.campaign {
+    margin: 1rem 0 0 0;
+}
+
+.comment {
+    margin: 1rem;
+}
 
 
 /* Footer */
 .footer-bar {
     background-color: black;
-    height: 13rem;
-    padding: 2rem;
+    height: 9.6rem;
+    padding: 0 2rem;
     color: white;
-    text-align: center;
+    width: 100%;
+    max-width: 120rem;
+
 }
 
 .footer-info {
@@ -169,7 +265,7 @@ header {
 
 .footer_logo_container {
     display: inline-block;
-    width: 30%;
+    width: 39%;
 }
 
 .footer_logo {
@@ -184,6 +280,12 @@ header {
 }
 
 .social_icon {
-    width: 2rem;
-    margin-bottom: 2rem;
+    width: 1.5rem;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+}
+
+/* Media Query - Max Width:  */
+@media (query) {
+
 }
