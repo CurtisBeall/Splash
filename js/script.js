@@ -1,3 +1,16 @@
+// Remove header color on home page
+window.onload = () => {
+    
+    const headerBar = document.getElementById("headerbar");
+    if (scrollY > 750 && window.location.href == 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+        headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    } else if (window.location.href != 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+        headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    } else {
+        headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    }
+
+}
 // window.onload = () => {
 //     const add_class = document.getElementById("what_we_do_text").children;
 //     for (let i = 0; i < add_class.length; i++) {
@@ -10,27 +23,13 @@
 window.onscroll = () => {
 
 // Creates header backgroundcolor
-    const headerBar = document.getElementsByClassName("header-bar");
-    if (scrollY > 1050 && window.location.href == 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
-
-        for (let i = 0; i < headerBar.length; i++) {
-            headerBar[i].style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        }
-        console.log(scrollY);
-
-
-    } else if (scrollY > 50 && window.location.href != 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
-
-        for (let i = 0; i < headerBar.length; i++) {
-            headerBar[i].style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        }
-        console.log(scrollY);
-
+    const headerBar = document.getElementById("headerbar");
+    if (scrollY > 750 && window.location.href == 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+        headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    } else if (window.location.href != 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+        headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
     } else {
-
-        for (let i = 0; i < headerBar.length; i++) {
-            headerBar[i].style.backgroundColor = 'rgba(0, 0, 0, 0)';
-        }
+        headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     }
 
 // Makes "billboard" text scroll in
@@ -38,9 +37,9 @@ window.onscroll = () => {
     let billboard_pos = 0;
 
 
-    if (scrollY > 2000) {
-        return false;
-    } else if (scrollY < 2000) {
+    if (scrollY > document.documentElement.clientHeight) {
+        // return false;
+    } else if (scrollY < document.documentElement.clientHeight) {
         billboard_pos += -scrollY;
         billboard.style.left = billboard_pos + 'px';
 
@@ -48,16 +47,16 @@ window.onscroll = () => {
 
 // Makes "What We Do" text scroll in
     const elem = document.getElementById("what_we_do_text");
-    let pos = screen.height * 2;
+    let pos = document.documentElement.clientHeight * 2;
 
     document.getElementById("what_we_do_text").style.position = "absolute";
 
-    if (scrollY >= screen.height) {
+    if (scrollY * 2 >= document.documentElement.clientHeight * 2) {
         elem.style.left = 0;
-        return false;
     } else {
         pos += -scrollY * 2;
         elem.style.left = pos + 'px';
+
     }
 
 };

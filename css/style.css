@@ -2,7 +2,6 @@
 * {
 	box-sizing: border-box;
     /*border: .05rem green solid;*/
-
 }
 
 /* SR-Only */
@@ -35,9 +34,8 @@
     float: left;
 }
 
-.fixed-text {
+.fixed-element {
     position: fixed;
-    color: white;
     z-index: -1;
     width: 100%;
     max-width: 120rem;
@@ -71,16 +69,19 @@ body {
 h1 {
     font-size: 4rem;
     font-family: Oswald, sans-serif;
+    margin: .5rem;
 }
 
 h2 {
     font-size: 2rem;
     font-family: PT Sans, sans-serif;
+    margin: .5rem;
 }
 
 h3 {
     font-size: 1.4rem;
     font-family: PT Sans, sans-serif;
+    margin: 0.5rem;
 }
 
 
@@ -97,6 +98,7 @@ header {
     max-width: 120rem;
     padding: 1rem 1.875rem;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* logo */
@@ -120,23 +122,20 @@ header {
     margin-left: 4rem;
 }
 
-.nav-scroll {
-    background-color: rgba(0, 0, 0, 0.8);
-}
 
 
 
 /* Billbaord */
 .billboard {
-    padding-top: 16rem;
-    padding-bottom: 17rem;
-    margin-bottom: 30rem;
+    padding-top: 14rem;
+    height: 46rem;
     color: white;
     position: relative;
 }
 
 .billboard_text {
-    position: absolute;
+    position: fixed;
+    margin: 0 auto;
 }
 
 .billboard_h1 {
@@ -146,14 +145,18 @@ header {
 }
 
 .billboard_h3 {
-    padding-top: 12rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 1rem;
+    width: 50%;
+    margin: 1rem auto;
+    padding: 1rem 0;
 }
 
 /* What We Do */
 .what_we_do {
     background-color: black;
     background-image: url("../img/meeting.jpg");
-    height: 44rem;
+    height: 45rem;
     background-repeat:no-repeat;
     background-position: center top -10rem;
     background-size: 120rem;
@@ -164,7 +167,7 @@ header {
 }
 
 .what_we_do_text {
-    margin-top: 4.1rem;
+    margin-top: 7rem;
     color: white;
     position: absolute;
     width: 100%;
@@ -173,7 +176,6 @@ header {
 .what_we_do_h1 {
     font-size: 5.375rem;
     top: 17rem;
-    margin-top: -1rem;
     margin-bottom: 2rem;
     line-height: 4.9rem;
 }
@@ -181,6 +183,7 @@ header {
 .what_we_do_h2 {
     font-size: 3rem;
     top: 6rem;
+    margin: 1rem;
     padding-top: 2rem;
 }
 
@@ -198,11 +201,19 @@ header {
 
 
 /* Our Work */
+.our_work_container {
+    text-align: center;
+}
+
 .our_work_text {
     color: white;
-    text-align: left;
-    padding: 0 2rem;
+    text-align: center;
+    padding: .1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
+.our_work_text > h3 {
+    margin: 1.5rem;
 }
 
 .work_example {
@@ -220,8 +231,8 @@ header {
 .work_image {
     object-fit: cover;
     border-radius: 50%;
-    width: 15rem;
-    height: 14rem;
+    width: 14rem;
+    height: 13rem;
     overflow: hidden;
     margin: 1rem;
 }
@@ -242,7 +253,8 @@ header {
 }
 
 .comment {
-    margin: 1rem;
+    padding: 0 1rem;
+    margin: 0 auto;
 }
 
 
