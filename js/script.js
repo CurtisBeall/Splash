@@ -1,10 +1,19 @@
+// Global Variables
+const headerbarHeight = document.getElementById('headerbar').clientHeight;
+const homepage = 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html'
+
 // Remove header color on home page
 window.onload = () => {
-    
+	
+	console.log(document.documentElement.clientWidth);
+
     const headerBar = document.getElementById("headerbar");
-    if (scrollY > 750 && window.location.href == 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+
+    if (scrollY > 750 && window.location.href == homepage) {
         headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    } else if (window.location.href != 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+    } else if (scrollY < headerbarHeight * 1.3 && window.location.href != homepage) {
+        headerBar.style.backgroundColor = 'rgb(0, 0, 0)';
+    } else if (scrollY > headerbarHeight * 1.3 && window.location.href != homepage) {
         headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
     } else {
         headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
@@ -22,40 +31,50 @@ window.onload = () => {
 // Onscroll Functions
 window.onscroll = () => {
 
-// Creates header backgroundcolor
+    // Creates header backgroundcolor
+	
     const headerBar = document.getElementById("headerbar");
-    if (scrollY > 750 && window.location.href == 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+
+    if (scrollY > 750 && window.location.href == homepage) {
         headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    } else if (window.location.href != 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+    } else if (scrollY < headerbarHeight * 1.3 && window.location.href != homepage) {
+        headerBar.style.backgroundColor = 'rgb(0, 0, 0)';
+    } else if (scrollY > headerbarHeight * 1.3 && window.location.href != homepage) {
         headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
     } else {
         headerBar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     }
 
-// Makes "billboard" text scroll in
-    const billboard = document.getElementById("billboard_text");
-    let billboard_pos = 0;
+
+    // Makes "billboard" and "What We Do" text scroll out/in on home page
+    if (window.location.href === 'file:///C:/Users/Curtis/Documents/Git%20Repos/Splash/index.html') {
+
+        const screenHeight = document.documentElement.clientHeight - headerbarHeight;
+        const billboard = document.getElementById("billboard_text");
+        let billboard_pos = 0;
+        const what_we_do = document.getElementById("what_we_do_text");
+        let what_we_do_pos = screenHeight * 2;
+
+        document.getElementById("what_we_do_text").style.position = "absolute";
+
+        // Makes "billboard" text scroll out/in
+        if (scrollY >= screenHeight) {
+            billboard.style.left = 0;
+            console.log(billboard.style.left);
+        } else {
+            billboard_pos = -scrollY;
+            billboard.style.left = billboard_pos + 'px';
+            console.log(billboard.style.left);
+        }
 
 
-    if (scrollY > document.documentElement.clientHeight) {
-        // return false;
-    } else if (scrollY < document.documentElement.clientHeight) {
-        billboard_pos += -scrollY;
-        billboard.style.left = billboard_pos + 'px';
-
-    }
-
-// Makes "What We Do" text scroll in
-    const elem = document.getElementById("what_we_do_text");
-    let pos = document.documentElement.clientHeight * 2;
-
-    document.getElementById("what_we_do_text").style.position = "absolute";
-
-    if (scrollY * 2 >= document.documentElement.clientHeight * 2) {
-        elem.style.left = 0;
-    } else {
-        pos += -scrollY * 2;
-        elem.style.left = pos + 'px';
+        // Makes "What We Do" text scroll out/in
+        if (scrollY * 2 >= screenHeight * 2) {
+            what_we_do.style.left = 0;
+        } else {
+            what_we_do_pos += -scrollY * 2;
+            what_we_do.style.left = what_we_do_pos + 'px';
+        }
 
     }
 
