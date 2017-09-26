@@ -1,7 +1,7 @@
 /* Style That Apply to Everything */
 * {
 	box-sizing: border-box;
-	border: 1px green solid;
+/*	border: 1px green solid;*/
 }
 
 
@@ -25,37 +25,33 @@
 
 /* Highlight Text */
 .text-highlight {
-	color: #e00077;
+	color: #00c1f3;
 }
-
 
 /* White Text */
 .white-text {
-	color: white;
+	color: #f5f5f5;
 	text-decoration: none;
 }
 
-/* White Text */
-.bold-text {
-	color: #9E9A9C;
+/* Black Text */
+.black-text {
+	color: #2b2b2b;
 	text-decoration: none;
-	font-weight: bold;
-	font-family: sans-serif;
 }
-
 
 /* Black Background */
 .blackbg {
 	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 1rem;
-	width: 50%;
 	margin: 1rem auto;
+	display: inline-block;
+	padding: 1rem;
 }
 
-/* Lavender Banner*/
-.lavender-ban {
-	background-color: rgba(77, 13, 44, 0.8);
-	padding: .5rem;
+/* White Background */
+.whitebg {
+	background-color: #f5f5f5;
 }
 
 /* Fix Position Elements */
@@ -79,6 +75,21 @@
 	margin-left: .5rem;
 }
 
+/* Hover */
+.hover:hover {
+	color: #00c1f3;
+}
+
+/* Object Right */
+.align-r {
+	text-align: right;
+}
+
+/* Object Left */
+.align-l  {
+	text-align: left;
+}
+
 /* Get What We Do Text To Scroll In */
 .what_we_do_text_scroll_in {
 	position: fixed;
@@ -90,24 +101,16 @@
 
 /* Background */
 body {
-	/*	background-image: url(../img/water_drop.jpg);*/
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-color: #4d0d2c;
-	background-position: 50% 0, center;
-	background-size: 120rem;
-	max-width: 120rem;
+	max-width: 100%;
 	margin: 0 auto;
-	overflow-x: hidden;
 }
 
 .container {
 	text-align: center;
-	margin-top: 9rem;
-	clip: rect(0, 120rem, auto, 0);
-	position: absolute;
+/*	clip: rect(0, 120rem, auto, 0);*/
+/*	position: absolute;*/
 	width: 100%;
-	max-width: 120rem;
+	overflow: hidden;
 }
 
 h1 {
@@ -148,27 +151,33 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	max-width: 120rem;
-	padding: 1rem 1.875rem;
+/*	padding: 1rem 1.875rem;*/
 	z-index: 1000;
-	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.8);	
+	padding: 1rem 2rem;
 }
 
 .headerbar {
 	width: 100%;
+	padding: 0 10rem;
 }
 
 
 /* logo */
 .logo_container {
 	display: inline-block;
-	width: 49.8%;
-	height: 100%;
+	width: 50%;
+	height: 4rem;
+	margin-top: .5rem;
+	margin-left: -.15rem;
+	overflow: hidden;
 }
 
 .logo {
-	display: inline-block;
-	width: 12.5rem;
+	font-size: 4rem;
+	margin: 0;
+	padding: 0;
+	transform: translateY(-.7rem);
 }
 
 
@@ -177,13 +186,17 @@ nav {
 	vertical-align: top;
 	text-align: right;
 	display: inline-block;
-	width: 49.8%;
+	width: 50%;
+	margin-top: .5rem;
+	margin-right: -.15rem;
+
+
 }
 
 .navbar,
 .nav-item {
 	display: inline-block;
-	margin-top: 1.25rem;
+	margin-top: 0;
 }
 
 .nav-link {
@@ -195,19 +208,23 @@ nav {
 
 /* Billbaord */
 .billboard {
-	padding-top: 14rem;
-	height: 51rem;
-	color: white;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 0, center;
+	background-size: cover;
 	position: relative;
-	width: 100%;
-	max-width: 120rem;
+		width: 100%;
+	height: 100vh;	
 	margin: 0 auto;
+	right: 0;
 }
 
 .billboard_text {
-	width: 100%;
-	margin: 0 auto;
+	position: absolute;
+	left: 0;
 	right: 0;
+	top: 47%;
+	transform: translateY(-50%);
 }
 
 .billboard_h1 {
@@ -216,61 +233,105 @@ nav {
 	margin: 0 auto;
 }
 
-.billboard_h3 {
-	padding: 1rem 0;
-}
-
-
 /* What We Do */
 .what_we_do {
-	background-color: black;
-	height: 45rem;
-	background-repeat: no-repeat;
-	background-position: center top -10rem;
-	background-size: 120rem;
+	height: 60vh;
 	width: 100%;
-	max-width: 120rem;
 	position: relative;
 	overflow-x: hidden;
 }
 
 .what_we_do_text {
-	margin-top: 7rem;
 	position: absolute;
 	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .what_we_do_h1 {
 	font-size: 5.375rem;
-	top: 17rem;
-	margin-bottom: 2rem;
 	line-height: 4.9rem;
 }
 
 .what_we_do_h2 {
 	font-size: 3rem;
-	top: 6rem;
-	margin: 1rem;
-	padding-top: 2rem;
+	margin-bottom: 1rem;
 }
 
 .what_we_do_h3 {
 	font-size: 1.5rem;
-	top: 31rem;
+	width: 50%;
+	margin: 2rem auto 0;
+	padding: 1rem;
+	line-height: 2.1rem;
+	border-radius: 1rem;
+}
+
+/* Our Approach */
+.our_approach {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 0, center;
+	background-size: cover;	
+	height: 100vh;	
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.our_approach_text {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 47%;
+	transform: translateY(-50%);
+}
+
+.our_approach_h1 {
+	font-size: 5.375rem;
+	margin-bottom: 2rem;
+	line-height: 4.9rem;
+}
+
+.our_approach_h2 {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.our_approach_h3 {
+	font-size: 1.5rem;
+	width: 50%;
 	margin: 0 auto;
 	padding: 1rem;
 	line-height: 2.1rem;
-	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 1rem;
-	width: 50%;
 }
+
+.aa_container {
+	display: inline-block;
+	height: 55vh;
+	width: 90rem;
+	position: relative;
+}
+
+.aa_logo {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.aa_icon {
+	width: 10rem;
+	margin: 2rem 2rem;
+}
+
 
 
 /* Our Work */
 .our_work_title {
 	text-align: center;
-	padding: .1rem 2rem;
-	background-color: rgb(0, 0, 0);
+	padding: 6rem 2rem .1rem;
 }
 
 .our_work_title>h3 {
@@ -284,17 +345,12 @@ nav {
 	vertical-align: top;
 	/*	100% divide by the # of rows needed */
 	width: calc(100% / 3);
-	margin: 0 -.11rem;
-}
-
-.work_example>a {
-	color: white;
-	text-decoration: none;
+	margin: 0 -.15rem;
 }
 
 .company {
 /*	100% divide by the # of rows needed */
-	padding-bottom: calc(1.5 * (100% / 3));
+	padding-bottom: 50%;
 	padding-left: 1rem;
 }
 
@@ -303,18 +359,14 @@ nav {
 	z-index: 1000;
 	vertical-align: bottom;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: #2b2b2b;
 	padding: 0rem 1rem;
-}
-
-.campaign {
-	height: 9rem;
 }
 
 .company_img_container {
 	position: absolute;
 	width: 100%;
-	padding-bottom: 110%;
+	height: 40vw;
 	top: 0;
 	right: 0;
 }
@@ -325,7 +377,7 @@ nav {
 	object-position: top;
 	width: 100%;
 	height: 100%;
-	filter: brightness(0.35) contrast(1) sepia(100%) hue-rotate(270deg) saturate(2.5);
+	filter: brightness(0.35) contrast(1) sepia(100%) hue-rotate(150deg) saturate(3.5);
 	z-index: -1;
 }
 
@@ -334,34 +386,16 @@ nav {
 /* Who We Are */
 .who_we_are {
 	width: 100%;
-	max-width: 120rem;
+	height: 60vh;
+	background-size: cover;
 	position: relative;
-	text-align: center;
-/*
-	padding-top: 18rem;
-	height: 46rem;
-*/
-	margin: 18rem auto 8rem auto;
-}
-
-.who_we_are_img {
-	background-color: #4d0d2c;
-	width: 100%;
-	max-width: 120rem;
-	margin: 0 auto;
-	top: 8rem;
-	left: 0;
-	right: 0;
 }
 
 .who_we_are_text {
 	width: 100%;
-	margin: 0 auto;
-	right: 0;
-}
-
-.who_we_are_h3 {
-	padding: .5rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /* The Staff */
@@ -371,10 +405,11 @@ nav {
 
 .staff_h1 {
 	margin: 0;
+	padding: 2rem;
+	color: #2b2b2b;
 }
 
 .staff_member {
-	text-align: left;
 	position: relative;
     height: 100%;
 }
@@ -383,20 +418,20 @@ nav {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	top: 0;
-	right: 0;
-	left: 0;
 }
-
-.staff_text_boarder {
-	width: 100%;
-	height: 100%;
-	display: table;
+.staff_textbg {
+    width: 103vh;
+    position: absolute;
+    top: 50%;
+	 left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 1.5vh;
 }
 
 .staff_text {
-	display: table-cell;
-	vertical-align: middle;
+	display: inline-block;
+	text-align: center;
 }
 
 .staff_name {
@@ -409,54 +444,40 @@ nav {
 
 .staff_img_container {
 	width: 50%;
+	height: 40vw;
 	position: relative;
-	padding-bottom: 36%;
 }
 
 .staff_img {
 	position: absolute;
 	object-fit: cover;
-	object-position: 0rem -1rem;
+	object-position: 0rem 5%;
 	width: 100%;
 	height: 100%;
 }
 
-/* Staff Img Right */
-.staff-img-right {
-	text-align: right;
-}
 
-/* Staff Img Left */
-.staff-img-left {
-	text-align: left;
-}
 
-/* Staff Text Right */
-.staff-text-right {
-	display: inline-block;
+/* Contact Form */
+.contact_background {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 0, center;
+	background-size: cover;	
+	height: 100vh;	
 	width: 100%;
-	left:0;
-	transform: translateX(18%);
-	padding-right: 80%;
-	text-align: center;
 }
 
-/* Staff Text Left */
-.staff-text-left {
-	display: inline-block;
-	width: 100%;
-	right:0;
-	transform: translateX(-18%);
-	padding-left: 80%;
-	text-align: center;
-}
-
-
-
-/* Contact Container */
 .contact_container {
+	padding-top: 53%;
+	transform: translateY(-50%);
+}
+
+.contact_text {
+	width: 100%;
 	max-width: 68rem;
-	margin: 5rem auto;
+	margin: 4rem auto 2rem;
+	padding: 2rem;
 }
 
 /* Contact Header */
@@ -468,10 +489,13 @@ nav {
 .contact_h1 {
 	font-family: Times; 
 	font-weight: 100;
-	border-bottom: .1rem solid white;
+	border-bottom: .1rem solid #f5f5f5;
+	margin: 0;
+	padding-bottom: 1rem;
 }
 
 .contact_h2 {
+	margin-top: 1rem;
 	font-weight: 100;
 	font-family: Times; 
 	line-height: 2rem;
@@ -487,16 +511,13 @@ nav {
 }
 
 .field {
-	height: 100%;
-	max-height: 15rem;
 	width: 100%;
 	max-width: 18rem;
-	padding-bottom: 2.5%;
+	padding: .50rem 0;
+	margin-bottom: 1rem;
 }
 
 .message {
-	height: 100%;
-	max-height: 20rem;
 	width: 100%;
 	max-width: 40rem;
 	padding-bottom: 20%;
@@ -510,17 +531,32 @@ nav {
 .human_verify_text{
 	padding: 0 2rem;
 	text-align: left;
+	margin-bottom: 1rem;
 }
 
 .human_verify{
 	text-align: center;
 }
 
-
 .security_img {
 	width: 100%;
-	max-width: 6.7rem;
-	margin-right: 30%;
+	max-width: 8.3rem;
+	margin-right: 18%;
+	vertical-align: top;
+}
+
+.form_button {
+	height: 3rem;
+	width: 100%;
+	padding: .25rem;
+	background-color: #00c1f3;	
+	border: .1rem solid rgba(18, 136, 153, 0.8);
+	font-weight: bold;
+/*
+	border: .1rem solid rgba(0, 193, 243, 0.8);
+	background-color: rgba(0, 0, 0, 0);
+	color: #00c1f3;
+*/
 }
 
 .client_note {
@@ -528,38 +564,29 @@ nav {
 	font-family: sans-serif;	
 	font-size: 1rem;
 	line-height: 2rem;
+	margin: 1rem 0 0;
 }
 
 
 
 /* Footer */
 .footer-bar {
-	background-color: black;
-	height: 9.6rem;
-	padding: 0 2rem;
+	background-color: #2b2b2b;
+	padding: 1rem 2rem;
 	width: 100%;
-	max-width: 120rem;
+	height: 3rem;
 }
 
 .footer-info {
 	display: inline-block;
-	width: 30%;
+	width: 49%;
 	text-align: left;
-}
-
-.footer_logo_container {
-	display: inline-block;
-	width: 39%;
-}
-
-.footer_logo {
-	width: 8rem;
-	margin-bottom: 2rem;
+	vertical-align: top;
 }
 
 .social_icon_container {
 	display: inline-block;
-	width: 30%;
+	width: 49%;
 	text-align: right;
 }
 
@@ -571,9 +598,44 @@ nav {
 
 
 /* Media Query - Max Width:  */
-@media (max-width: 500px;
-) {
-	body {
-		background-color: aliceblue;
+@media screen and (max-width: 1825px) 	{
+
+	h1 {
+		font-size: 3rem;
+		font-family: Oswald, sans-serif;
+		margin: .5rem;
+	}
+}
+
+/* Media Query - Max Width:  */
+@media screen and (max-width: 1300px) 	{
+	
+	/* What We Do */
+	.what_we_do_h3 {
+		font-size: 1.5rem;
+		width: 80%;
+		margin: 2rem auto 0;
+		padding: 1rem;
+		line-height: 2.1rem;
+		border-radius: 1rem;
+	}
+	/* Our Work */
+	.work_example {
+		text-align: left;
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		/*	100% divide by the # of rows needed */
+		width: calc(100% / 2);
+		margin: 0 -.15rem;
+	}
+	
+	.work_text {
+		height: 16rem;
+		z-index: 1000;
+		vertical-align: bottom;
+		width: 100%;
+		background-color: #2b2b2b;
+		padding: 0rem 1rem;
 	}
 }
