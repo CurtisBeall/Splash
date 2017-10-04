@@ -18,7 +18,7 @@
 
 /* Hide Toggle */
 .hidden {
-	visibility: visible;
+	visibility: visible !important;
 }
 
 /* Adds Shadow to Text */
@@ -146,7 +146,7 @@ h4 {
 h5 {
 	font-size: 1rem;
 	font-weight: lighter;
-	font-family: sans-serif;	
+	font-family: sans-serif;
 	margin: 0.5rem auto;
 }
 
@@ -158,7 +158,7 @@ header {
 	width: 100%;
 /*	padding: 1rem 1.875rem;*/
 	z-index: 1000;
-	background-color: rgba(0, 0, 0, 0.8);	
+	background-color: rgba(0, 0, 0, 0.8);
 	padding: .5rem 2rem;
 }
 
@@ -198,7 +198,7 @@ nav {
 
 .c-hamburger {
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	overflow: hidden;
 	width: 4rem;
 	height: 4rem;
@@ -208,6 +208,7 @@ nav {
 	transition: background 0.3s;
 /*	background-color: #00c1f3;*/
 	background-color: transparent;
+	visibility: hidden;
 }
 
 .c-hamburger:focus {
@@ -306,7 +307,7 @@ nav {
 	background-size: cover;
 	position: relative;
 	width: 100%;
-	height: 100vh;	
+	height: 100vh;
 	right: 0;
 }
 
@@ -352,7 +353,7 @@ nav {
 	line-height: 4.9rem;
 }
 
-.what_we_do_h2 {
+.what_we_do_h1 {
 	margin-bottom: 1rem;
 }
 
@@ -369,8 +370,8 @@ nav {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: 50% 0, center;
-	background-size: cover;	
-	height: 90vh;	
+	background-size: cover;
+	height: 90vh;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -444,14 +445,19 @@ nav {
 	vertical-align: top;
 	/*	100% divide by the # of columns needed */
 	width: calc(100% / 3);
+	/*	100% divide by the # of columns needed */
+	padding-top: calc(.8*(100%/3));
 	margin: 0 -.15rem;
+	overflow: hidden;
+	z-index: 100;
 }
 
 .company {
 	font-size: 2rem;
 	height: 1rem;
-	padding-bottom: 52%;
 	padding-left: 1rem;
+	position: absolute;
+	top: 0;
 }
 
 .work_text {
@@ -467,23 +473,18 @@ nav {
 	font-size: 2.8rem;
 }
 
-.company_img_container {
-	position: absolute;
-	width: 100%;
-	height: 40vw;
-	top: 0;
-	right: 0;
-}
-
 .company_img {
 	position: absolute;
 	object-fit: cover;
 	object-position: top;
 	width: 100%;
-	/*	100% divide by the # of columns needed */
-	height: calc((100%/3)*2.5);
+	height: 100%;
 	filter: brightness(0.35) contrast(1) sepia(100%) hue-rotate(150deg) saturate(3.5);
 	z-index: -1;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
 }
 
 
@@ -494,7 +495,7 @@ nav {
 	height: 80vh;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top;
 	position: relative;
 }
 
@@ -524,6 +525,7 @@ nav {
 .staff_member {
 	position: relative;
     height: 100%;
+	overflow: hidden;
 }
 
 .staff_text_container {
@@ -555,16 +557,43 @@ nav {
 	width: 50%;
 	height: 40vw;
 	position: relative;
+	
 }
 
 .staff_img {
 	position: absolute;
 	object-fit: cover;
-	object-position: 0rem 5%;
+	object-position: 50% 5%;
 	width: 100%;
 	height: 100%;
 }
 
+.contact_us_container {
+	width: 100%;
+	height: 48rem;
+	padding: 2rem 2rem;
+	position: relative;
+}
+
+.contact_us_text {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+.contact_us_h1 {
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+}
+
+.contact_us_h3 {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	margin-bottom: 4rem;
+}
 
 
 /* Contact Form */
@@ -573,7 +602,7 @@ nav {
 	background-repeat: no-repeat;
 	background-position: 50% 0, center;
 	background-size: cover;
-	height: 100vh;	
+	height: 100vh;
 	width: 100%;
 	margin-bottom: -2.5rem;
 }
@@ -596,7 +625,7 @@ nav {
 }
 
 .contact_h1 {
-	font-family: Times; 
+	font-family: Times;
 	font-weight: 100;
 	border-bottom: .1rem solid #f5f5f5;
 	margin: 0;
@@ -606,7 +635,7 @@ nav {
 .contact_h2 {
 	margin-top: 1rem;
 	font-weight: 100;
-	font-family: Times; 
+	font-family: Times;
 	line-height: 2rem;
 }
 
@@ -626,7 +655,7 @@ nav {
 	margin-bottom: 1rem;
 }
 
-.field:not(#human_verify) {	
+.field:not(#human_verify) {
 	width: 100%;
 }
 
@@ -662,7 +691,7 @@ nav {
 	height: 3rem;
 	width: 100%;
 	padding: .25rem;
-	background-color: #00c1f3;	
+	background-color: #00c1f3;
 	border: .1rem solid rgba(18, 136, 153, 0.8);
 	font-weight: bold;
 /*
@@ -674,7 +703,7 @@ nav {
 
 .client_note {
 	font-weight: lighter;
-	font-family: sans-serif;	
+	font-family: sans-serif;
 	margin: 1rem 0 0;
 }
 
@@ -708,6 +737,36 @@ nav {
 
 
 
+@media (hover: hover) {
+	
+	.work_text {
+	transform: translateY(100%);
+	opacity: 0;
+}
+	.work_example:hover div {
+		transition: all 0.3s ease-out;
+		transform: translateY(-0%);
+		opacity: 1;
+	}
+}
+
+	
+/* Media Query - About Page - Max Width / Max Height: 960px */
+@media screen and (orientation: portrait)	{
+
+	/*	Who We Are */
+	.who_we_are {
+		height: 62rem;
+	}
+	.staff_img_container {
+		height: 56vh;
+	}
+	.staff_img {
+		height: 150%;
+		object-position: 50% -1rem;
+	}
+}
+
 /* Media Query - Min Width: 1825px */
 @media screen and (min-width: 1825px) 	{
 
@@ -721,7 +780,7 @@ nav {
 		font-size: 1.6rem;
 		line-height: 2rem;
 	}
-	
+
 	/* Our Work */
 	.company {
 	font-size: 3rem;
@@ -729,7 +788,7 @@ nav {
 	.campaign {
 	font-size: 4rem;
 	}
-	
+
 	/* Contact Header */
 	.contact_h1 {
 		font-size: 4rem;
@@ -739,16 +798,16 @@ nav {
 
 /* Media Query - Max Width: 1325px */
 @media screen and (max-width: 1325px)	{
-		
-	
+
+
 	h1 {
 		font-size: 3.5rem;
-	}	
+	}
 	h3 {
 		font-size: 1.2rem;
 		line-height: 1.6rem;
 	}
-	
+
 	/*Awards & Associations (aa)*/
 	.aa_container {
 		max-width: 60rem;
@@ -757,18 +816,16 @@ nav {
 		width: 9rem;
 		margin: 2rem 1rem;
 	}
-	
+
 	/* Our Work */
 	.work_example {
 		/*	100% divide by the # of rows needed */
 		width: calc(100% / 2);
+		/*	100% divide by the # of columns needed */
+		padding-top: calc(.8*(100%/2));
 		margin: 0 -.15rem;
 	}
-	.company_img {
-	/*	100% divide by the # of columns needed */
-	height: calc((100%/2)*2.5);
-	}
-	
+
 	/* The Staff */
 	.staff_text {
 		width: 20rem;
@@ -776,8 +833,10 @@ nav {
 	.staff_name {
 		font-size: 2.75rem;
 	}
-	
-	
+	.contact_us_container {
+		height: 30rem;
+	}
+
 	/* Contact Header */
 	.contact_h1 {
 	font-size: 3rem;
@@ -791,21 +850,62 @@ nav {
 
 }
 
-/* Media Query - Max Width / Max Height: 925px */
-@media screen and (max-width: 925px), (max-height: 925px) and (orientation: portrait)	{
+/* Media Query - Max Width / Max Height: 960px */
+@media screen and (max-width: 960px), (max-height: 960px) and (portrait)	{
+
+	/* logo */
+	.logo_container {
+		display: inline-block;
+		width: 70%;
+		height: 4rem;
+		margin-top: .5rem;
+		margin-left: -.15rem;
+		overflow: hidden;
+	}
+
+	/* Navigation Bar */
+	nav {
+		width: 30%;
+	}
+	.c-hamburger {
+		visibility: visible;
+		position: relative;
+	}
+	.navbar {
+		position: absolute;
+		display: inline-block;
+		top: 5.75rem;
+		right: 1.9rem;
+		width: 7rem;
+		background-color: rgba(0, 0, 0, 0.8);
+		padding: 2rem 1rem .0;
+		text-align: left;
+		visibility: hidden;
+	}
+	.nav-item {
+		margin-bottom: 1rem;
+	}
+	.nav-link {
+		margin-left: 0rem;
+	}
 
 	/*Awards & Associations (aa)*/
 	.aa_icon {
 		width: 8rem;
 		margin: 2rem .5rem;
 	}
-	
+
 	/* Our Work */
 	.company {
 	font-size: 1.4rem;
 	}
 	.campaign {
 	font-size: 2.5rem;
+	}
+
+	/* Who We Are */
+	.who_we_are {
+		height: 47rem;
 	}
 	
 	/* The Staff */
@@ -816,44 +916,12 @@ nav {
 		max-width: 40.5rem;
 		padding: 1.5vw;
 	}
-	
-	/* Footer */
-	.footer-bar {
-		background-color: #2b2b2b;
-		padding: 1rem 2rem;
-		width: 100%;
-		height: 2rem;
-	}
-	.footer-info {
-		display: inline-block;
-		width: 56%;
-		text-align: left;
-		vertical-align: top;
-	}
-	.social_icon_container {
-		display: inline-block;
-		width: 43%;
-		text-align: right;
-	}
-	.social_icon {
-		width: 1.5rem;
-		margin-bottom: 5rem;
-		margin-left: .5rem;
-	}
-	
-}
-
-/* Media Query - About Page - Max Width / Max Height: 960px */
-@media screen and (max-width: 960px), (max-height: 960px), (max-height: 960px) and (orientation: portrait)	{
 
 	/* Contact Form */
-	.contact_background {
-		height: auto;
-	}
 	.contact_container {
 		padding: 7rem 2rem 4rem;
 	}
-	
+
 	/* Contact Header */
 	.contact {
 		width: 100%;
@@ -873,16 +941,45 @@ nav {
 	}
 	.message {
 		max-width: none;
-	}	
+	}
+	
+	/* Footer */
+	.footer-bar {
+		background-color: #2b2b2b;
+		padding: 1rem 2rem;
+		width: 100%;
+		height: 3rem;
+	}
+	.footer-info {
+		display: inline-block;
+		width: 56%;
+		text-align: left;
+		vertical-align: top;
+	}
+	.social_icon_container {
+		display: inline-block;
+		width: 43%;
+		text-align: right;
+	}
+	.social_icon {
+		width: 1.5rem;
+		margin-bottom: 5rem;
+		margin-left: .5rem;
+	}
+
+}
+
+/* Media Query - Max Width / Max Height: 960px */
+@media screen and (max-width: 960px), screen and (max-height: 960px), (max-height: 960px) and (portrait)	{
+	/* Contact Form */
+	.contact_background {
+		height: auto;
+	}
 }
 
 /* Media Query - Max Width: 625px */
-@media screen and (max-width: 625px), (max-height: 625px) and (orientation: portrait) 	{ 
-	
-	.hidden {
-	visibility: hidden;
-	}
-	
+@media screen and (max-width: 625px), (max-height: 625px) and (orientation: portrait) 	{
+
 	h1 {
 	font-size: 2.5rem;
 	}
@@ -901,36 +998,9 @@ nav {
 		line-height: 1rem;
 	}
 
-	/* logo */
-	.logo_container {
-		display: inline-block;
-		width: 70%;
-		height: 4rem;
-		margin-top: .5rem;
-		margin-left: -.15rem;
-		overflow: hidden;
-	}
-	
-	/* Navigation Bar */
-	nav {
-		width: 30%;
-	}	
-	.navbar {
-		position: absolute;
-		display: inline-block;
-		top: 5rem;
-		right: 1.9rem;
-		width: 7rem;
-		background-color: rgba(0, 0, 0, 0.8);
-		padding: 2rem 1rem .0;
-		text-align: left;
-	}
-	
-	.nav-item {
-		margin-bottom: 1rem;
-	}
-	.nav-link {
-		margin-left: 0rem;
+	.logo {
+		font-size: 3rem;
+		transform: translateY(0);
 	}
 	
 	/*Awards & Associations (aa)*/
@@ -941,52 +1011,27 @@ nav {
 		width: 7rem;
 		margin: .5rem 1rem;
 	}
-	
+
 	/* Our Work */
 	.work_example {
 		/*	100% divide by the # of rows needed */
 		width: calc(100% / 1);
+		/*	100% divide by the # of columns needed */
+		padding-top: calc(.8*(100%/1));
 	}
 	.work_text {
-		height: 14.5rem;
+		height: 11rem;
 	}
 	.campaign {
-    font-size: 2.25rem;
+    font-size: 2.1rem;
 	}
-	.company_img {
-	/*	100% divide by the # of columns needed */
-	height: calc((100%/1)*2.5);
-	}
-	
+
 	/* Who We Are */
-	.who_we_are {
-		height: 90vh;
-	}
 	.who_we_are_text {
 		top: 60%;
 	}
-	
+
 	/* The Staff */
-/*
-	.staff_name {
-		font-size: 2rem;
-	}
-	
-	.staff_textbg {
-		max-width: none;
-		padding: 0;
-	}
-	
-	.staff_text {
-		width: 45vw;
-		margin: 0 .5rem;
-		background-color: aqua;
-	}
-*/
-	/* Contact Form */
-	.contact_container {
-		padding: 8.5rem 2rem 4rem;
-	}
 	.staff_text_container {
 		z-index: 1;
 		top: 100%;
@@ -1011,16 +1056,25 @@ nav {
 		object-position: 0 -.4rem;
 	}
 
+	/* Contact Form */
+	.contact_container {
+		padding: 8.5rem 2rem 4rem;
+	}
 	/* Contact Header */
 	.contact {
 		width: 100%;
 	}
+	
+	.contact_h1 {
+    font-size: 2.5rem;
+	}
+	
 	.contact h3 {
 		padding-bottom: .5rem;
 		border-bottom: .1rem solid #f5f5f5;
 		margin-bottom: 1rem;
 	}
-
+	
 	/* Form Header */
 	.field_container {
 		width: 100%;
@@ -1035,7 +1089,7 @@ nav {
 		max-width: 5.5rem;
 		margin-right: 5%;
 	}
-	
+
 	/* Footer */
 	.footer-bar {
 		background-color: #2b2b2b;
@@ -1057,12 +1111,5 @@ nav {
 		margin-bottom: 5rem;
 		margin-left: .5rem;
 	}
-	
-}
 
-/* Media Query - About Page - Max Width / Max Height: 626px */
-@media screen and (max-width: 626px), (max-height: 626px), (max-height: 626px) and (orientation: portrait) {
-	.who_we_are {
-		height: 32rem;
-	}
 }
