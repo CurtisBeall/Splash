@@ -1,7 +1,6 @@
 /* Style That Apply to Everything */
 * {
 	box-sizing: border-box;
-/*	border: 1px green solid;*/
 }
 
 
@@ -917,11 +916,6 @@ nav {
 		padding: 1.5vw;
 	}
 
-	/* Contact Form */
-	.contact_container {
-		padding: 7rem 2rem 4rem;
-	}
-
 	/* Contact Header */
 	.contact {
 		width: 100%;
@@ -974,6 +968,9 @@ nav {
 	/* Contact Form */
 	.contact_background {
 		height: auto;
+	}
+	.contact_container {
+		padding: 7rem 2rem 4rem;
 	}
 }
 
