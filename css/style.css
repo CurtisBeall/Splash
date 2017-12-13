@@ -1,5 +1,6 @@
 /* Style That Apply to Everything */
 * {
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -181,6 +182,7 @@ header {
 	font-size: 4rem;
 	margin: 0;
 	padding: 0;
+	-webkit-transform: translateY(-.7rem);
 	transform: translateY(-.7rem);
 }
 
@@ -204,6 +206,7 @@ nav {
 	border-radius: 15%;
 	border: none;
 	cursor: pointer;
+	-webkit-transition: background 0.3s;
 	transition: background 0.3s;
 /*	background-color: #00c1f3;*/
 	background-color: transparent;
@@ -244,21 +247,30 @@ nav {
 }
 
 .c-hamburger--htx span {
+	-webkit-transition: background 0s 0.3s;
 	transition: background 0s 0.3s;
 }
 
 .c-hamburger--htx span::before,
 .c-hamburger--htx span::after {
+	-webkit-transition-duration: 0.3s, 0.3s;
 	transition-duration: 0.3s, 0.3s;
+	-webkit-transition-delay: 0.3s, 0s;
 	transition-delay: 0.3s, 0s;
 }
 
 .c-hamburger--htx span::before {
+	-webkit-transition-property: top, -webkit-transform;
+	transition-property: top, -webkit-transform;
 	transition-property: top, transform;
+	transition-property: top, transform, -webkit-transform;
 }
 
 .c-hamburger--htx span::after {
+	-webkit-transition-property: bottom, -webkit-transform;
+	transition-property: bottom, -webkit-transform;
 	transition-property: bottom, transform;
+	transition-property: bottom, transform, -webkit-transform;
 }
 
 /* active state, i.e. menu open */
@@ -273,16 +285,19 @@ nav {
 
 .c-hamburger--htx.is-active span::before {
 	top: 0;
+	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 
 .c-hamburger--htx.is-active span::after {
 	bottom: 0;
+	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 
 .c-hamburger--htx.is-active span::before,
 .c-hamburger--htx.is-active span::after {
+	-webkit-transition-delay: 0s, 0.3s;
 	transition-delay: 0s, 0.3s;
 }
 
@@ -315,6 +330,7 @@ nav {
 	left: 0;
 	right: 0;
 	top: 55%;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin: 0 2rem;
 }
@@ -344,6 +360,7 @@ nav {
 	left: 0;
 	right: 0;
 	top: 50%;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin: 0 2rem;
 }
@@ -370,7 +387,7 @@ nav {
 	background-repeat: no-repeat;
 	background-position: 50% 0, center;
 	background-size: cover;
-	height: 90vh;
+	height: 120vh;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -381,6 +398,7 @@ nav {
 	left: 0;
 	right: 0;
 	top: 47%;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin: 0 2rem;
 }
@@ -415,6 +433,7 @@ nav {
 	position: absolute;
 	width: 100%;
 	top: 50%;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin: 1rem 0;
 }
@@ -445,10 +464,11 @@ nav {
 	/*	100% divide by the # of columns needed */
 	width: calc(100% / 3);
 	/*	100% divide by the # of columns needed */
-	padding-top: calc(.8*(100%/3));
+/*	padding-top: calc(.8*(100%/3));*/
 	margin: 0 -.15rem;
 	overflow: hidden;
 	z-index: 100;
+    height: 80vh
 }
 
 .company {
@@ -460,12 +480,14 @@ nav {
 }
 
 .work_text {
-	height: 16rem;
-	z-index: 1000;
-	vertical-align: bottom;
-	width: 100%;
-	background-color: #2b2b2b;
-	padding: 0rem 1rem;
+    position: absolute;
+    bottom: 0;
+    height: 16rem;
+    z-index: 1000;
+    vertical-align: bottom;
+    width: 100%;
+    background-color: #2b2b2b;
+    padding: 0rem 1rem;
 }
 
 .campaign {
@@ -474,10 +496,13 @@ nav {
 
 .company_img {
 	position: absolute;
+	-o-object-fit: cover;
 	object-fit: cover;
+	-o-object-position: top;
 	object-position: top;
 	width: 100%;
 	height: 100%;
+	-webkit-filter: brightness(0.35) contrast(1) sepia(100%) hue-rotate(150deg) saturate(3.5);
 	filter: brightness(0.35) contrast(1) sepia(100%) hue-rotate(150deg) saturate(3.5);
 	z-index: -1;
 	top: 0;
@@ -502,6 +527,7 @@ nav {
 	width: 100%;
 	position: absolute;
 	top: 50%;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	padding: 0 2rem;
 }
@@ -537,7 +563,8 @@ nav {
 	max-width: 75vw;
     position: absolute;
     top: 50%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%) translateX(0);
+	transform: translateY(-50%) translateX(0);
 	 left: 0;
     right: 0;
     margin: 0 auto;
@@ -554,17 +581,18 @@ nav {
 
 .staff_img_container {
 	width: 50%;
-	height: 40vw;
+	height: 70vh;
 	position: relative;
 	
 }
 
 .staff_img {
 	position: absolute;
+	-o-object-fit: cover;
 	object-fit: cover;
+	-o-object-position: 50% 5%;
 	object-position: 50% 5%;
 	width: 100%;
-	height: 100%;
 }
 
 .contact_us_container {
@@ -579,6 +607,7 @@ nav {
 	top: 50%;
 	left: 0;
 	right: 0;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
@@ -734,19 +763,35 @@ nav {
 	margin-left: 1rem;
 }
 
+    .work_text {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        opacity: 0;
+    }
 
+    .work_example:hover div {
+        -webkit-transform: translateY(-0%);
+        transform: translateY(-0%);
+        opacity: 1;
+        -webkit-transition: all 0.3s ease-out, opacity 0.3s;
+        transition: all 0.3s ease-out, opacity 0.3s;
+    }
 
-@media (hover: hover) {
+@media (any-hover: hover) {
 	
-	.work_text {
-	transform: translateY(100%);
-	opacity: 0;
-}
-	.work_example:hover div {
-		transition: all 0.3s ease-out;
-		transform: translateY(-0%);
-		opacity: 1;
-	}
+    .work_text {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .work_example:hover div {
+        -webkit-transform: translateY(-0%);
+        transform: translateY(-0%);
+        opacity: 1;
+        -webkit-transition: all 0.3s ease-out, opacity 0.3s;
+        transition: all 0.3s ease-out, opacity 0.3s;
+    }
 }
 
 	
@@ -762,6 +807,7 @@ nav {
 	}
 	.staff_img {
 		height: 150%;
+		-o-object-position: 50% -1rem;
 		object-position: 50% -1rem;
 	}
 }
@@ -997,6 +1043,7 @@ nav {
 
 	.logo {
 		font-size: 3rem;
+		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
 	
@@ -1049,7 +1096,9 @@ nav {
 
 	.staff_img {
 		position: static;
+		-o-object-fit: cover;
 		object-fit: cover;
+		-o-object-position: 0 -.4rem;
 		object-position: 0 -.4rem;
 	}
 
