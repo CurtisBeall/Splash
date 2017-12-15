@@ -117,33 +117,33 @@ body {
 	overflow: hidden;
 }
 
-h1 {
+.s1 {
 	font-size: 4rem;
 	font-family: Oswald, sans-serif;
 	margin: .5rem;
 }
 
-h2 {
+.s2 {
 	font-size: 3rem;
 	font-family: PT Sans, sans-serif;
 	margin: 0.5rem auto;
 }
 
-h3 {
+.s3 {
 	font-size: 1.4rem;
 	font-family: PT Sans, sans-serif;
 	margin: 0.5rem auto;
 	line-height: 2.1rem;
 }
 
-h4 {
+.s4 {
 	font-size: 1.2rem;
 	font-family: sans-serif;
 	margin: 0.5rem auto;
 	font-weight: normal;
 }
 
-h5 {
+.s5 {
 	font-size: 1rem;
 	font-weight: lighter;
 	font-family: sans-serif;
@@ -179,11 +179,14 @@ header {
 }
 
 .logo {
-	font-size: 4rem;
 	margin: 0;
 	padding: 0;
 	-webkit-transform: translateY(-.7rem);
 	transform: translateY(-.7rem);
+}
+
+.logo .s1 {
+	font-size: 4rem;
 }
 
 
@@ -335,11 +338,11 @@ nav {
 	margin: 0 2rem;
 }
 
-.billboard_h1 {
+.billboard_s1 {
 	margin: 0 auto;
 }
 
-.billboard_h3 {
+.billboard_s3 {
 	width: 100%;
 	max-width: 50rem;
 	margin: 2rem auto 1rem;
@@ -365,15 +368,15 @@ nav {
 	margin: 0 2rem;
 }
 
-.what_we_do_h1 {
+.what_we_do_s1 {
 	line-height: 4.9rem;
 }
 
-.what_we_do_h1 {
+.what_we_do_s1 {
 	margin-bottom: 1rem;
 }
 
-.what_we_do_h3 {
+.what_we_do_s3 {
 	width: 100%;
 	max-width: 50rem;
 	margin: 2rem auto 1rem;
@@ -403,16 +406,16 @@ nav {
 	margin: 0 2rem;
 }
 
-.our_approach_h1 {
+.our_approach_s1 {
 	margin-bottom: 2rem;
 	line-height: 4.9rem;
 }
 
-.our_approach_h2 {
+.our_approach_s2 {
 	margin-bottom: 1rem;
 }
 
-.our_approach_h3 {
+.our_approach_s3 {
 	width: 100%;
 	max-width: 50rem;
 	margin: 2rem auto 1rem;
@@ -452,23 +455,22 @@ nav {
 	padding: 8rem 2rem .1rem;
 }
 
-.our_work_title>h3 {
+.our_work_title > .s3 {
 	margin: 1.5rem;
 }
 
 .work_example {
+	height: 80vh;
+	/*	100% divide by the # of columns needed */
+	width: calc(100% / 3);
+	max-height: 36rem;
+	margin: 0 -.15rem;
 	text-align: left;
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
-	/*	100% divide by the # of columns needed */
-	width: calc(100% / 3);
-	/*	100% divide by the # of columns needed */
-/*	padding-top: calc(.8*(100%/3));*/
-	margin: 0 -.15rem;
 	overflow: hidden;
 	z-index: 100;
-    height: 80vh
 }
 
 .company {
@@ -481,8 +483,9 @@ nav {
 
 .work_text {
     position: absolute;
+	padding: .5rem;
     bottom: 0;
-    height: 16rem;
+    height: 45%;
     z-index: 1000;
     vertical-align: bottom;
     width: 100%;
@@ -492,6 +495,7 @@ nav {
 
 .campaign {
 	font-size: 2.8rem;
+	margin-bottom: 1rem;
 }
 
 .company_img {
@@ -532,7 +536,7 @@ nav {
 	padding: 0 2rem;
 }
 
-.who_we_are_h3 {
+.who_we_are_s3 {
 	max-width: 60rem;
 }
 
@@ -541,7 +545,7 @@ nav {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.staff_h1 {
+.staff_s1 {
 	height: 6rem;
 	margin: 0;
 	color: #2b2b2b;
@@ -611,12 +615,12 @@ nav {
 	transform: translateY(-50%);
 }
 
-.contact_us_h1 {
+.contact_us_s1 {
 	margin-top: 2rem;
 	margin-bottom: 4rem;
 }
 
-.contact_us_h3 {
+.contact_us_s3 {
 	width: 100%;
 	max-width: 48rem;
 	margin: 0 auto;
@@ -652,7 +656,7 @@ nav {
 	vertical-align: top;
 }
 
-.contact_h1 {
+.contact_s1 {
 	font-family: Times;
 	font-weight: 100;
 	border-bottom: .1rem solid #f5f5f5;
@@ -660,7 +664,7 @@ nav {
 	padding-bottom: 1rem;
 }
 
-.contact_h2 {
+.contact_s2 {
 	margin-top: 1rem;
 	font-weight: 100;
 	font-family: Times;
@@ -763,20 +767,6 @@ nav {
 	margin-left: 1rem;
 }
 
-    .work_text {
-        -webkit-transform: translateY(100%);
-        transform: translateY(100%);
-        opacity: 0;
-    }
-
-    .work_example:hover div {
-        -webkit-transform: translateY(-0%);
-        transform: translateY(-0%);
-        opacity: 1;
-        -webkit-transition: all 0.3s ease-out, opacity 0.3s;
-        transition: all 0.3s ease-out, opacity 0.3s;
-    }
-
 @media (any-hover: hover) {
 	
     .work_text {
@@ -815,13 +805,13 @@ nav {
 /* Media Query - Min Width: 1825px */
 @media screen and (min-width: 1825px) 	{
 
-	h1 {
+	.s1 {
 		font-size: 5rem;
 	}
-	h2 {
+	.s2 {
 		font-size: 4rem;
 	}
-	h3 {
+	.s3 {
 		font-size: 1.6rem;
 		line-height: 2rem;
 	}
@@ -833,9 +823,8 @@ nav {
 	.campaign {
 	font-size: 4rem;
 	}
-
 	/* Contact Header */
-	.contact_h1 {
+	.contact_s1 {
 		font-size: 4rem;
 	}
 
@@ -845,10 +834,10 @@ nav {
 @media screen and (max-width: 1325px)	{
 
 
-	h1 {
+	.s1 {
 		font-size: 3.5rem;
 	}
-	h3 {
+	.s3 {
 		font-size: 1.2rem;
 		line-height: 1.6rem;
 	}
@@ -883,7 +872,7 @@ nav {
 	}
 
 	/* Contact Header */
-	.contact_h1 {
+	.contact_s1 {
 	font-size: 3rem;
 	}
 
@@ -895,8 +884,8 @@ nav {
 
 }
 
-/* Media Query - Max Width / Max Height: 960px */
-@media screen and (max-width: 960px), (max-height: 960px) and (portrait)	{
+/* Media Query - Max Width / Max Height: 1025 */
+@media screen and (max-width: 1025px), (max-height: 1025) and (portrait)	{
 
 	/* logo */
 	.logo_container {
@@ -941,6 +930,9 @@ nav {
 	}
 
 	/* Our Work */
+	.work_text {
+		max-height: 17rem;
+	}
 	.company {
 	font-size: 1.4rem;
 	}
@@ -966,7 +958,7 @@ nav {
 	.contact {
 		width: 100%;
 	}
-	.contact h3 {
+	.contact .s3 {
 		padding-bottom: .5rem;
 		border-bottom: .1rem solid #f5f5f5;
 		margin-bottom: 1rem;
@@ -1023,28 +1015,31 @@ nav {
 /* Media Query - Max Width: 625px */
 @media screen and (max-width: 625px), (max-height: 625px) and (orientation: portrait) 	{
 
-	h1 {
+	.s1 {
 	font-size: 2.5rem;
 	}
-	h2 {
+	.s2 {
 		font-size: 1.8rem;
 	}
-	h3 {
+	.s3 {
 		font-size: 1.1rem;
 		line-height: 1.2rem;
 	}
-	h4 {
+	.s4 {
 		font-size: 1rem;
 	}
-	h5 {
+	.s5 {
 		font-size: .8rem;
 		line-height: 1rem;
 	}
 
 	.logo {
-		font-size: 3rem;
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
+	}
+	
+	.logo .s1{
+		font-size: 3rem;
 	}
 	
 	/*Awards & Associations (aa)*/
@@ -1063,8 +1058,12 @@ nav {
 		/*	100% divide by the # of columns needed */
 		padding-top: calc(.8*(100%/1));
 	}
+	/* Our Work */
+	.work_example .s3{
+		font-size: 1.4rem;
+	}
 	.work_text {
-		height: 11rem;
+		height: 13rem;
 	}
 	.campaign {
     font-size: 2.1rem;
@@ -1111,11 +1110,11 @@ nav {
 		width: 100%;
 	}
 	
-	.contact_h1 {
+	.contact_s1 {
     font-size: 2.5rem;
 	}
 	
-	.contact h3 {
+	.contact .s3 {
 		padding-bottom: .5rem;
 		border-bottom: .1rem solid #f5f5f5;
 		margin-bottom: 1rem;
